@@ -1,4 +1,5 @@
 import re
+
 import pypdf
 
 with open('Path for resume', 'rb') as file:
@@ -31,9 +32,11 @@ question_database = {
     ]
 }
 
+
 def extract_skills(text):
     skills = set(re.findall(r'\b\w+\b', text.lower()))
     return skills
+
 
 def generate_questions(skills):
     questions = []
@@ -41,6 +44,7 @@ def generate_questions(skills):
         if skill in question_database:
             questions.extend(question_database[skill])
     return questions
+
 
 skills = extract_skills(text)
 questions = generate_questions(skills)
