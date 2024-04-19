@@ -1,0 +1,14 @@
+services:
+  tech_interview:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: tech_interview
+    expose:
+      - 65535:65535
+    networks:
+      - careerspeak
+
+networks:
+  careerspeak:
+    external: true
