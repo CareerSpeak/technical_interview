@@ -9,7 +9,7 @@ app = Flask(__name__)
 def technical():
     args = request.args
 
-    keywords = args.getlist('keywords')
+    keywords = args.get('keywords').split(',')
 
     ti = TechnicalInterviewer()
 
