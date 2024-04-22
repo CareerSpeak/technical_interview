@@ -9,9 +9,11 @@ app = Flask(__name__)
 def technical():
     args = request.args
 
+    keywords = args.getlist('keywords')
+
     ti = TechnicalInterviewer()
 
-    questions = ti.generate_questions(set(args.get('keywords')))
+    questions = ti.generate_questions(keywords)
 
     return jsonify(
         {
