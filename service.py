@@ -13,7 +13,7 @@ def technical():
 
     ti = TechnicalInterviewer()
 
-    questions = ti.generate_questions(keywords)
+    questions = ti.get_next_question(keywords)
 
     return jsonify(
         {
